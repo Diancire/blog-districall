@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}S'inscrire{% endblock %}
+
+{% block body %}
+
+    <h1 class="text-center my-4">S'inscrire</h1>
+
+    {{ form_errors(registrationForm) }}
+
+    <div class="container">
+    {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.email, {
+            label: 'Pseudo'
+        }) }}
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'Mot de passe'
+        }) }}
+        {{ form_row(registrationForm.age, {
+            label: 'Age'
+        }) }}
+        {{ form_row(registrationForm.sex, {
+            label: 'Sex'
+        }) }}
+        {{ form_row(registrationForm.agreeTerms, {
+            label: 'Accepte les conditions générales du site'
+        }) }}
+
+        <div class="d-grid gap-2 mb-3">
+            <button type="submit" class="btn btn-primary">S'inscrire</button>
+        </div>
+    {{ form_end(registrationForm) }}
+    </div>
+
+{% endblock %}
